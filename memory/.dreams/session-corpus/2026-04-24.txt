@@ -1,0 +1,4 @@
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L44] User: [message_id: om_x100b51919faf8ca0c34f43cf80a822a] ou_a3b34a70256cf54ce890904a9ae3baba: 你的报告全是大厂的新闻，太普通了，这些新闻市场烂大街，我希望看到的是创新的产品，特别是得到了A轮，B轮融资， 或者C轮融资的产品， 建议你分析的调整一下prompt，多一些干活，多一些在创业有帮助的信息
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L45] Assistant: 明白，你希望日报更有创业参考价值，少一些大厂PR稿。让我先看看当前日报的配置。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L51] Assistant: 找到了。现在我来更新这个cron job的prompt，聚焦创业公司和创新产品。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L53] Assistant: 已经更新好了 ✅ 主要调整： **筛选标准变了：** - ✅ 重点收录：**融资动态**（种子/A/B/C轮）、**创新产品首发**、**值得借鉴的商业模式** - ❌ 排除：大厂PR稿、通用新闻、凑数内容 **信息源更聚焦：** - 融资渠道：Crunchbase、TechCrunch Funding、YC最新批次 - 新产品：Product Hunt、Hacker News Show HN、Indie Hackers - 国内：36氪融资、IT桔子 **报告格式升级：** - 每个产品加**融资信息**（轮次/金额/投资方） -

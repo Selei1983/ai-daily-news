@@ -1,0 +1,1 @@
+[main/sessions/578f2b19-8c83-40e6-90ab-c07544121012.jsonl#L5] User: [cron:c130159f-b2fd-42b0-a756-87a39b6795c6 AI新产品日报] 你是422产品实验室的AI产品分析师。请完成以下任务： ## 任务：AI新产品日报 ### 1. 信息搜集 从以下渠道搜集过去24-48小时内涌现的AI新产品和新投资动态： - Y Combinator 最新投资（特别是AI相关） - Product Hunt AI类别热门新品 - TechCrunch、VentureBeat等科技媒体的AI报道 - GitHub Trending中的AI项目 - a16z、Sequoia、Bain Cap

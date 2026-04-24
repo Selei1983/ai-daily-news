@@ -1,0 +1,14 @@
+[main/sessions/5d454edf-c023-4825-94ab-b640ee5a8db0.checkpoint.962538da-6b26-4f41-8fd0-6b559e7de886.jsonl#L5] User: [cron:c130159f-b2fd-42b0-a756-87a39b6795c6 AI新产品日报] 你是422产品实验室的AI产品分析师。请完成以下任务： ## 任务：AI新产品日报 ### 1. 信息搜集 从以下渠道搜集过去24-48小时内涌现的AI新产品和新投资动态： - Y Combinator 最新投资（特别是AI相关） - Product Hunt AI类别热门新品 - TechCrunch、VentureBeat等科技媒体的AI报道 -
+[main/sessions/5d454edf-c023-4825-94ab-b640ee5a8db0.jsonl#L5] User: [cron:c130159f-b2fd-42b0-a756-87a39b6795c6 AI新产品日报] 你是422产品实验室的AI产品分析师。请完成以下任务： ## 任务：AI新产品日报 ### 1. 信息搜集 从以下渠道搜集过去24-48小时内涌现的AI新产品和新投资动态： - Y Combinator 最新投资（特别是AI相关） - Product Hunt AI类别热门新品 - TechCrunch、VentureBeat等科技媒体的AI报道 - GitHub Trending中的AI项目 - a16z、Sequoia、Bain Cap
+[main/sessions/5d454edf-c023-4825-94ab-b640ee5a8db0.jsonl#L24] User: [cron:c130159f-b2fd-42b0-a756-87a39b6795c6 AI新产品日报] 你是422产品实验室的AI产品分析师。请完成以下任务： ## 任务：AI新产品日报 ### 1. 信息搜集 从以下渠道搜集过去24-48小时内涌现的AI新产品和新投资动态： - Y Combinator 最新投资（特别是AI相关） - Product Hunt AI类别热门新品 - TechCrunch、VentureBeat等科技媒体的AI报道 - GitHub Trending中的AI项目 - a16z、Sequoia、Bain Cap
+[main/sessions/5d454edf-c023-4825-94ab-b640ee5a8db0.jsonl#L44] Assistant: 现在我来创建报告并推送到 GitHub。
+[main/sessions/5d454edf-c023-4825-94ab-b640ee5a8db0.jsonl#L54] Assistant: 报告已生成并推送成功。现在准备飞书通知摘要： 🔬 **AI新产品日报 | 2026年4月23日** **今日精选：9个产品/动态** 🏆 **Top 3:** 1. **Google Workspace Intelligence** — AI作为底层操作系统嵌入办公全家桶，直接影响数亿企业用户 2. **SpaceX欲$600亿收购Cursor** — AI编码工具的战略价值被推至前所未有的高度 3. **Thinking Machines Lab × Google数十亿美元合作** — Mira Murati离职后的新动作，巨
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L5] User: System: [2026-04-23 09:04:00 GMT+8] 报告已生成并推送成功。现在准备飞书通知摘要： System: System: 🔬 **AI新产品日报 | 2026年4月23日** System: System: **今日精选：9个产品/动态** System: System: 🏆 **Top 3:** System: 1. **Google Workspace Intelligence** — AI作为底层操作系统嵌入办公全家桶，直接影响数亿企业用户 System: 2. **SpaceX欲$600亿收购Curso
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L6] Assistant: 看起来今天的AI新产品日报已经在早上9点自动生成并推送了！日报覆盖了9个产品/动态，Google Cloud Next 2026是今日最大事件。 除了日报，今天其他时间没什么特别的任务在进行。有什么想让我帮忙的吗？
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L8] User: 你推的这些新闻都太大了。我希望你可以深入看看一些最新发布的工具和软件，让我看到新生力量
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L9] Assistant: 好，我来帮你挖掘一些真正新的、小而美的AI工具和项目。让我搜一波。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L21] Assistant: 网络请求都被拦截了，让我换个方式试试。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L27] Assistant: 网络连不出去（DNS解析到内网IP，看起来有防火墙/代理限制）。让我用browser试试。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L33] Assistant: 这个搜索返回了历史热门，不是最近的。让我搜最近几天的。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L39] Assistant: 好，现在让我扩大范围找最近几天有热度的AI项目。
+[main/sessions/d66f2a61-f1d0-497d-b70e-4f3dc7e565a5.jsonl#L42] Assistant: 这下好多了！让我整理一下最近几天真正有趣的新生力量项目。 这是我这几天在 HN 上发现的**新生力量**——不是Google/微软那类大厂新闻，而是独立开发者和小团队的AI工具： --- ### 🔥 最近一周最值得关注 **1. GoModel** — 开源AI网关（Go语言） - 204 pts | 4月21日 - 轻量级AI模型网关，开源，用Go写的 - https://github.com/ENTERPILOT/GOModel/ **2. Mediator.ai** — 用纳什谈判+LLM实现"公平分配" - 158 pts
