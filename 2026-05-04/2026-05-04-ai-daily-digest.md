@@ -1,159 +1,165 @@
 # AI 产品日报 | 2026-05-04
 
-> 🔬 422产品实验室 · AI新产品日报 · 每日精选
-
 ## 今日洞察
 
-今天GitHub Trending释放了一个清晰信号：**「AI编码生态正从模型竞争转向工具链竞争」**。Matt Pocock的Skills以5.7万Star登顶周榜，证明开发者需要的不是更强的模型，而是更可靠的工程实践框架。GitNexus（3.5万Star）用知识图谱让AI Agent「看懂」整个代码架构，Browserbase Skills把浏览器自动化变成Claude Code的「眼睛和手」。与此同时，DeepSeek生态在野蛮生长——DeepSeek-TUI和ds2api分别从终端Agent和API中间件两个角度，把DeepSeek的Web能力免费开放给开发者。AIDC-AI的Pixelle-Video则代表了一个值得关注的方向：**AI全自动内容生产引擎**，用Apache 2.0开源方式降低短视频创作门槛。对创业者来说，这些项目的共同启示是：**在AI基础设施逐渐标准化的当下，差异化壁垒来自对特定工作流的深度理解，而不是模型本身。**
+今天的AI创业圈传递了两个强信号：**「可验证AI」正在成为金融等高监管行业的刚需基础设施**，Kepler用确定性执行+LLM推理的分层架构拿下了27个全球市场的金融机构；**「AI Agent的基础设施层」正在快速成型**——从联邦知识图谱（Stigmem）到代码搜索（Semble）再到编码会话编排（Smithy AI），围绕Agent Memory、Agent Testing、Agent Orchestration的创业机会比Agent本身更有壁垒。同时，David Silver的Ineffable Intelligence以11亿美元种子轮融资刷新纪录，说明资本对Superintelligence赛道的押注已从「看论文」进入「下重注」阶段。
 
 ---
 
-## 1. Matt Pocock Skills — AI编码的「工程实践框架」，周增3.5万Star
+## 1. Ineffable Intelligence — 11亿美元种子轮，史上最大种子融资
 
-**做什么的**：TypeScript领域专家Matt Pocock开源的个人Claude Code/Codex技能集，包含`/grill-me`（需求对齐）、`/tdd`（测试驱动开发）、`/diagnose`（系统化调试）、`/improve-codebase-architecture`（架构治理）等核心工作流技能。
+**融资信息**：种子轮 $1.1B（约80亿人民币），投资方包括Nvidia和Google
+
+**做什么的**：由DeepMind强化学习核心人物David Silver创立的Superintelligence公司，2025年底成立，目前未公开具体产品方向。David Silver是AlphaGo、AlphaZero、AlphaFold背后的关键研究员。
 
 **为什么值得关注**：
-- **周增3.5万Star，总量5.7万**——这不是一个工具的胜利，而是「工程方法论」对「vibe coding」的胜利。开发者社区正在从「让AI写代码」转向「让AI按正确的工程实践写代码」
-- **核心理念**：不控制流程，只提供「小而可组合」的技能模块。与GSD、BMAD等方法论不同，Matt的Skills不试图拥有整个流程，而是让开发者在任意模型、任意工具上都能用
-- **共享语言文档**：`/grill-with-docs` 技能会帮你和AI建立一套领域术语文档（CONTEXT.md），让后续每次对话都更精准、更省token。这可能是一整个技能集中最有价值的创新
-- **创业启示**：如果你在做AI编码工具，别再卷「谁的模型更强」了——**差异化在于教会AI怎么做工程决策**
+- 11亿美元种子轮融资刷新了AI创业融资纪录，上一轮纪录是SSI（Ilya Sutskever创立）的$10亿
+- David Silver的背景意味着技术路线大概率不走LLM，而是强化学习+世界模型的路线
+- Nvidia和Google同时参投，说明大厂在Superintelligence赛道「两边下注」已成常态
+- 对创业者的启示：**顶级AI研究员创业的融资门槛已经被拉到了B轮级别**，普通创业者需要更清晰地证明自己的差异化
 
-**类比参考**：AI编码界的《代码整洁之道》，或者「给Claude Code配了个资深Tech Lead」
+**类比参考**：对标SSI（Ilya Sutskever）、Recursive Superintelligence（$500M@4B估值），但融资规模碾压前者
 
-🔗 [GitHub](https://github.com/mattpocock/skills) | [Newsletter](https://www.aihero.dev/s/skills-newsletter)
+🔗 [CNBC报道](https://www.cnbc.com/2026/04/27/deepmind-ineffable-intelligence-record-seed-funding-nvidia-google.html)
 
 ---
 
-## 2. GitNexus — 零服务端代码知识图谱引擎，3.5万Star
+## 2. Kepler — 让AI「自证其正确」的金融研究平台
 
-**做什么的**：将任意代码仓库索引为知识图谱（依赖关系、调用链、执行流、集群），通过MCP协议暴露给Cursor、Claude Code、Codex等AI Agent，让Agent对代码架构有完整认知。
+**融资信息**：未公开融资轮次，创始人来自Palantir，2025年成立
+
+**做什么的**：为金融服务提供可验证的AI研究平台。分析师用自然语言提问，系统不仅给出答案，还能把每个数字追溯回SEC文件的具体行项目。已索引2600万+SEC文件、5000万+公开文档、27个全球市场的14000+家公司。
 
 **为什么值得关注**：
-- **解决AI编码最大的盲区**：当前AI Agent写代码最大的问题不是能力不足，而是「看不到全貌」——不知道改一个函数会影响哪些调用链。GitNexus让Agent拥有了架构级的视野
-- **完全本地运行，隐私友好**：使用自研的LadybugDB做本地存储，代码不需要上传到任何服务器。对企业来说这是刚需
-- **多产品形态**：CLI+MCP给日常开发用，Web UI给快速探索用，还有bridge模式连接两者。同时提供企业版（PR Review、自动文档、多仓库统一图谱）
-- **周增5,423 Star**，开发者用脚投票
+- **产品架构值得学习**：把LLM只放在「推理层」，所有需要确定性结果的计算（比率、 fiscal period解析等）走独立执行引擎——「Model不应该是整个系统，它只是pipeline的一个stage」
+- **进入市场策略**：选择金融作为第一个垂直场景，因为「金融是AI最苛刻的试炼场」——数据密集、术语歧义、零容错。如果能在金融活下来，医疗、法律都能复用
+- **关键技术决策**：用Opus做复杂推理（意图分解、歧义消解），用Sonnet做高吞吐约束任务，分阶段匹配模型而非All-in-One
+- **商业模式信号**：SOC 2 Type II认证+ISO 27001进行中，说明直接卖给Enterprise，不做PLG
 
-**类比参考**：代码版DeepWiki + SourceGraph，但「比DeepWiki更深，比SourceGraph更轻」
+**类比参考**：金融版的「Perplexity + 审计追踪」，AlphaSense的可验证AI版本
 
-🔗 [GitHub](https://github.com/abhigyanpatwari/GitNexus) | [Web UI](https://gitnexus.vercel.app)
+🔗 [Kepler.ai](https://kepler.ai/) | [Anthropic案例](https://claude.com/blog/how-kepler-built-verifiable-ai-for-financial-services-with-claude)
 
 ---
 
-## 3. DeepSeek-TUI — DeepSeek原生的终端Coding Agent，2,319 Star
+## 3. Speq — 面向AI Coding Agent时代的产品规格工具
 
-**做什么的**：基于DeepSeek V4的1M token上下文和prefix cache构建的终端编码Agent，用Rust编写，单binary无需Node/Python运行时，内置MCP客户端、沙箱、持久化任务队列。
+**融资信息**：未公开融资，微软提供免费算力支持
+
+**做什么的**：协作式Web端产品规格工具，通过LLM驱动的引导式问答帮团队把模糊的产品想法转化为结构化、开发就绪的Spec（Vision→Flow→Product→Logic→Tech五阶段），支持MCP协议直接交接给Coding Agent。
 
 **为什么值得关注**：
-- **Native RLM（递归语言模型）**：可以并行发出1-16个DeepSeek V4 Flash子Agent做批量分析、任务分解或并行推理。这是目前终端Agent中独特的「原生并行推理」能力
-- **三种交互模式**：Plan（只读探索）、Agent（需审批）、YOLO（全自动）。比Claude Code更细粒度的控制
-- **LSP集成**：编辑文件后自动运行rust-analyzer、pyright等语言服务器，把诊断错误注入模型上下文——这在终端Agent中很罕见
-- **1M token上下文 + 自动压缩**：长会话不会丢失关键信息
-- **对中国开发者友好**：支持TUNA镜像、国内CDN下载
+- **踩中了关键趋势**：随着Codex、Claude Code等Agent能力暴涨，**「写出好指令」比「写好代码」更有价值**——Codex负责人Tibo也在X上说了同样的话
+- **产品切入角度**：不做代码生成，做代码生成之前的「需求结构化」，这是一个被低估的环节
+- **Go-to-Market策略**：完全免费（微软赞助），通过MCP生态绑定主流Coding Agent（Claude Code、Cursor、Codex等），本质上是做Agent时代的需求文档标准
+- **创业者启示**：在AI Agent时代，「AI的前置环节」（需求定义、测试设计、验收标准）可能比「AI的后置环节」（代码审查、部署）更有商业价值
 
-**类比参考**：DeepSeek版的Claude Code，但架构更贴近「终端原生」而非「Web延伸」
+**类比参考**：GitHub SpecKit的Web版 + MCP友好版，产品经理的「Cursor」
 
-🔗 [GitHub](https://github.com/Hmbown/DeepSeek-TUI)
+🔗 [getspeq.com](https://getspeq.com/)
 
 ---
 
-## 4. Pixelle-Video（AIDC-AI）— AI全自动短视频引擎，1万Star
+## 4. Stigmem — AI Agent的开源联邦知识图谱
 
-**做什么的**：开源的AI全自动短视频生成引擎。输入主题，AI自动完成文案创作→分镜生成→配图生成→语音合成→视频合成全流程。支持Windows一键整合包。
+**融资信息**：开源项目（Apache 2.0），v1.0发布
+
+**做什么的**：为AI Agent提供共享、联邦式知识底层（Knowledge Fabric）。核心思路：Agent不再各自维护孤立记忆，而是把带来源标注、置信度评分的事实写入共享知识层，节点间通过Ed25519签名的握手协议同步。
 
 **为什么值得关注**：
-- **「全自动」是真的全自动**：不需要逐段编辑，输入一个主题（如「为什么要养成阅读习惯」），几分钟内生成完整短视频
-- **模块化设计，可替换**：LLM可选通义千问/GPT/DeepSeek/Ollama本地；图像生成走ComfyUI工作流（可自定义）；TTS支持Edge-TTS和声音克隆；视频模板支持自定义HTML
-- **完全可免费运行**：Ollama本地LLM + 本地ComfyUI = 零成本
-- **Apache 2.0开源**，可商用。AIDC-AI是阿里巴巴达摩院体系下的团队
-- **创业启示**：短视频内容生产是一个巨大的市场，但当前工具要么太重（After Effects），要么太浅（剪映模板）。Pixelle-Video的「全流程自动化+模块化可定制」可能是一个好的中间路线
+- **解决了一个真实痛点**：当前每个AI Agent都有自己的Memory Store，互相之间无法共享知识。Stigmem让Agent之间可以交换「可验证的事实」而非「不可审计的embedding」
+- **技术架构亮点**：事实是不可变的七元组（entity, relation, value, source, timestamp, confidence, scope），矛盾作为一等公民处理而非静默覆盖
+- **生态接入**：原生MCP适配器，可接入Claude Code、Cursor、Gemini、Codex CLI等主流Agent运行时
+- **创业启示**：Agent Memory目前是个碎片化的市场（每个Agent自己做），如果有统一的Knowledge Fabric，可能成为Agent生态的「TCP/IP层」
 
-**类比参考**：AI版的剪映 + ComfyUI融合体，或者「内容创作者的AutoGPT」
+**类比参考**：Agent世界的「IPFS + 知识图谱」，对标Mem0但走联邦路线
 
-🔗 [GitHub](https://github.com/AIDC-AI/Pixelle-Video)
+🔗 [GitHub](https://github.com/Eidetic-Labs/stigmem) | [文档](https://docs.stigmem.dev/)
 
 ---
 
-## 5. Browserbase Skills — Claude Code的「浏览器之眼」，1,867 Star
+## 5. Semble — 面向AI Agent的极低Token代码搜索引擎
 
-**做什么的**：为Claude Code和Codex提供浏览器自动化能力的技能包，包括网页浏览、CAPTCHA解决、cookie同步、站点调试、UI测试、浏览器性能追踪等10个技能。
+**融资信息**：开源项目，MinishLab出品
+
+**做什么的**：专为AI Coding Agent设计的代码搜索MCP Server。结合静态embedding（potion-code-16M）+ BM25混合检索，CPU运行，无需API Key或GPU。
 
 **为什么值得关注**：
-- **让AI Agent「看见」网页**：之前Claude Code只能操作本地文件和终端，现在可以通过Browserbase远程浏览器访问任意网站——填表单、点按钮、甚至帮你订披萨
-- **site-debugger技能特别精巧**：自动分析网站的反爬虫机制、选择器稳定性、CAPTCHA类型，生成测试通过的site playbook
-- **ui-test技能：对抗性UI测试**：分析git diff来测试变更，或全面探索App找bug——这不是传统的E2E测试，而是AI驱动的「破坏性测试」
-- **商业模式参考**：Browserbase的核心业务是远程浏览器基础设施，Skills是获客手段——用开源技能包吸引开发者到付费的浏览器云服务
+- **性能数据亮眼**：比grep+read节省98%的Token消耗，达到137M参数代码Transformer 99%的检索质量，速度快200倍
+- **商业模式参考**：开源MCP Server + 底层embedding模型，这是AI Infra创业的经典路径——先通过开源工具获取开发者心智，再通过模型/服务变现
+- **技术路线选择**：用静态embedding（Model2Vec）而非Transformer，在Agent场景下是明智的权衡——Agent需要的是毫秒级响应，不是极致精度
+- **定价参考**：零配置、零API Key、零GPU，最大化降低开发者试用门槛
 
-**类比参考**：给AI Agent配了一个「Selenium + Puppeteer」超能力包
+**类比参考**：代码搜索版的「sqlite-vss」+ MCP封装，对标Sourcegraph但专为Agent优化
 
-🔗 [GitHub](https://github.com/browserbase/skills)
+🔗 [GitHub](https://github.com/MinishLab/semble)
 
 ---
 
-## 6. n8n-MCP — 让AI直接构建n8n自动化工作流，1.96万Star
+## 6. Smithy AI — 从Issue Tracker编排Docker化的Coding Agent
 
-**做什么的**：为Claude Desktop/Claude Code/Cursor/Windsurf提供的MCP服务器，让AI助手理解n8n的1,650个节点（820核心+830社区），直接帮你设计和构建自动化工作流。
+**融资信息**：开源项目
+
+**做什么的**：从Jira/GitLab/Forgejo的Issue自动启动Docker化的Claude Code会话——每个Issue一个分支、自动开PR、响应CI状态、整合PR反馈。
 
 **为什么值得关注**：
-- **覆盖度惊人**：节点属性99%覆盖、操作63.6%覆盖、文档87%覆盖、2,352个工作流模板、156个真实配置示例
-- **265个AI节点识别**：自动检测n8n中AI能力的工具变体，帮你快速找到可用的AI集成方案
-- **多级验证体系**：minimal → full → workflow三级验证，确保AI生成的工作流能真正跑起来
-- **SaaS化路径清晰**：免费层100次工具调用/天，自部署也完全支持。从个人工具到万人使用的开源产品，这是个人开发者变现的教科书案例
-- **创业启示**：如果你在做「AI+已有工具」的集成产品，n8n-MCP的「文档→验证→模板」三层方法论值得学习
+- **产品形态值得借鉴**：本质上是把「AI Coding Agent + 容器化 + Git工作流」三件事串起来的Orchestrator，解决了Agent直接在开发者机器上运行的安全性问题
+- **工作流设计**：Agent在容器中运行→自动创建分支→开PR→响应CI→整合Review反馈→自动更新知识库，形成闭环
+- **创业者启示**：AI Coding的下一波机会不在「写代码」本身（模型越来越强），而在**编排、安全、审计**这些企业级需求上
+- **对标对象**：OpenAI Codex内部的类似系统，但开源且支持多种Agent/Coding工具
 
-**类比参考**：n8n版的Copilot，但更像是「AI工作流架构师」
+**类比参考**：Coding Agent版的「Jenkins + GitHub Actions」，对标OpenAI Codex的企业流程层
 
-🔗 [GitHub](https://github.com/czlonkowski/n8n-mcp) | [Dashboard](https://dashboard.n8n-mcp.com)
+🔗 [GitHub](https://github.com/smithy-ai/smithy-ai)
 
 ---
 
-## 7. ds2api — DeepSeek Web对话能力的API中间件，3,258 Star
+## 7. Ableton Live MCP — 用自然语言控制音乐制作
 
-**做什么的**：用Go编写的中间件，将DeepSeek网页版对话能力转换为OpenAI、Claude、Gemini兼容的API格式。支持多账号轮询、并发队列、Tool Calling适配、WebUI管理台。
+**融资信息**：开源项目（Show HN获得83 points，54条评论）
+
+**做什么的**：一个MCP Server，让用户通过自然语言指令控制Ableton Live（专业音乐制作软件），可以要求AI创建音轨、添加效果器、调整混音等。
 
 **为什么值得关注**：
-- **周增1,660 Star**，中国开发者社区（Linux.do）热度极高
-- **三协议兼容**：一个服务同时提供OpenAI `/v1/chat/completions`、Claude `/anthropic/v1/messages`、Gemini `/v1beta/models/*`三种接口——这意味着你的任何AI工具都可以切换到DeepSeek后端
-- **PromptCompat内核**：将API格式的请求转换为DeepSeek网页版能理解的纯文本上下文，包括Tool Call的语义对齐
-- **纯Go实现PoW**：DeepSeek的Proof-of-Work验证用Go原生高性能实现，毫秒级响应
-- **争议与信号**：这个项目游走在服务条款的灰色地带，但它的Star增速反映了一个真实需求——**开发者在寻找更低成本的AI推理方案**。对创业者来说，这个信号比项目本身更重要
+- **MCP协议的想象力正在被验证**：MCP不再只是Coding工具的专利，开始渗透到创意工具领域（音乐制作、设计工具等）
+- **产品使用方式**：创始人用语音指令让Codex在Ableton中制作了一首完整的EDM，包括歌词、编曲、混音、动态调整——全程自然语言交互
+- **创业方向**：**「专业工具的MCP化」** 可能是一个被严重低估的方向。Figma、Blender、Premiere等专业工具如果都有MCP Server，AI Agent的市场会大几个量级
+- **HN反响**：54条评论说明开发者社区对「AI+创意工具」的需求真实存在
 
-**类比参考**：DeepSeek版的OneAPI / New API，但更底层、更工程化
+**类比参考**：音乐制作版的「自然语言编程」，Ableton的「Copilot」
 
-🔗 [GitHub](https://github.com/CJackHwang/ds2api)
+🔗 [GitHub](https://github.com/bschoepke/ableton-live-mcp)
 
 ---
 
-## 8. Maigret — 开源OSINT人名画像工具，2.4万Star
+## 8. WakaTime AI Dashboard — 追踪你的AI编码花销
 
-**做什么的**：通过一个用户名，从3,000+网站收集该人的完整数字画像——包括社交账号、个人信息、关联账号，支持递归搜索、Tor/I2P网络、PDF/HTML/图谱报告导出。
+**融资信息**：WakaTime已有产品，AI Dashboard为新功能
+
+**做什么的**：开发者时间追踪工具WakaTime新增的AI看板，可以查看每个项目中AI生成的代码占比、Prompt长度、Token消耗量、人工修改跟进等数据。
 
 **为什么值得关注**：
-- **日增1,119 Star**，在安全研究和调查领域持续火爆
-- **无需API Key**：所有数据通过公开网页抓取，不依赖任何付费接口
-- **递归发现**：从一个用户名出发，自动发现关联的其他用户名和ID，然后继续搜索
-- **可作为Python库嵌入**：`import maigret` 就能在自己的项目中调用
-- **商业化路径**：开源版MIT协议免费，商业版提供5,000+站点数据库（每日更新）和用户名检查API。**这是一个典型的「开源获客+商业变现」模式**
-- **创业启示**：AI Agent时代，「身份验证」和「背景调查」的需求只会增长。将Maigret与AI分析能力结合，可以做更有价值的产品
+- **切中了企业刚需**：随着AI编码工具在企业中普及，管理层最关心的三个问题：AI到底省了多少时间？AI生成的代码质量如何？我们在AI工具上花了多少Token钱？
+- **数据视角独特**：按项目、按天、按团队成员维度看AI编码 attribution，这是目前市场上少有的从「人」的角度追踪AI使用情况的产品
+- **商业模式**：建立在已有的开发者工具生态之上，新增AI分析功能作为增值模块，对已有的付费用户群直接Upsell
+- **对标参考**：对创业者来说，**「AI使用的可观测性」**（AI Observability for Engineering Teams）是一个正在形成的新品类
 
-**类比参考**：AI版的Sherlock Holmes工具箱，或者「开源版的Spokeo」
+**类比参考**：AI编码版的「RescueTime」，工程管理版的「Datadog for AI Coding」
 
-🔗 [GitHub](https://github.com/soxoj/maigret) | [Telegram Bot](https://t.me/maigret_search_bot)
+🔗 [WakaTime AI](https://wakatime.com/ai)
 
 ---
 
-## 趋势观察
+## 今日趋势总结
 
-| 信号 | 解读 |
+| 趋势 | 信号 |
 |------|------|
-| **Skills生态爆发** | Matt Pocock Skills + Browserbase Skills + Composio Skills，AI编码工具正在形成「插件生态」——谁能成为这个生态的标准平台？ |
-| **知识图谱给AI「装眼睛」** | GitNexus让Agent看到代码架构全貌，标志着AI编码从「文件级理解」进化到「系统级理解」 |
-| **DeepSeek生态野蛮生长** | DeepSeek-TUI + ds2api + Pixelle-Video同时上榜，DeepSeek正在成为中国AI开发者的「默认选择」 |
-| **个人开源项目也能拿万级Star** | n8n-MCP（个人开发者）、ds2api（个人开发者）证明了——解决真实痛点的工具，不靠公司背书也能爆 |
-| **内容生产AI化加速** | Pixelle-Video的全自动短视频引擎说明，AI内容生产正在从「辅助工具」变成「一键生成」 |
+| 🔥 可验证AI | Kepler用确定性基础设施+LLM推理的分层架构拿下金融客户 |
+| 🔥 Agent基础设施 | Memory（Stigmem）、Search（Semble）、Orchestration（Smithy AI）、Testing（TrainForgeTester）全面开花 |
+| 📈 Superintelligence融资 | David Silver的$1.1B种子轮说明资本不再只是「看论文」，开始「下重注」 |
+| 🎵 MCP协议扩展 | 从Coding工具延伸到音乐制作（Ableton MCP），专业工具MCP化是新方向 |
+| 📊 AI使用可观测性 | WakaTime AI Dashboard反映企业对AI编码ROI的量化需求 |
 
 ---
 
-> 📌 **422产品实验室**出品 | 每日精选AI新产品、融资、创新模式
-> 
-> 关注我们，获取面向创业者的AI产品情报
+> 📌 本日报由 422产品实验室 每日自动生成 | [GitHub](https://github.com/Selei1983/ai-daily-news)
