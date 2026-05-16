@@ -323,7 +323,7 @@ function render() {
     const d = new Date(featured.date + 'T00:00:00');
     const dateStr = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 周${weekdays[d.getDay()]}`;
     document.getElementById('featured-area').innerHTML = `
-        <a href="./daily/${featured.date}-ai-daily-digest.md" class="featured-card">
+        <a href="./reader.html?f=daily/${featured.date}-ai-daily-digest.md" class="featured-card">
             <div class="featured-label">📰 最新一期</div>
             <div class="featured-title">${featured.title}</div>
             <div class="featured-insight">${featured.insight}</div>
@@ -347,7 +347,7 @@ function render() {
             lastMonth = monthKey;
         }
         html += `
-            <a href="./daily/${item.date}-ai-daily-digest.md" class="list-item">
+            <a href="./reader.html?f=daily/${item.date}-ai-daily-digest.md" class="list-item">
                 <div class="list-date">
                     <div class="month">${String(im.getMonth()+1).padStart(2,'0')}月</div>
                     <div class="day">${im.getDate()}</div>
