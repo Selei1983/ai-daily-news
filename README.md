@@ -12,12 +12,17 @@
 
 ## 📋 项目简介
 
-这是一个自动化AI新闻聚合项目，每天晚上 20:00 自动：
+422产品实验室出品的 AI 产品日报，每个工作日早上 9:00 自动生成：
 
-1. 🔍 搜索最新AI产品（Product Hunt, TechCrunch等）
-2. 📝 生成精美的HTML页面
-3. 🚀 推送到GitHub Pages和Gitea
-4. 📱 发送微信通知
+1. 🔍 多渠道搜集最新AI产品/融资动态（Product Hunt、TechCrunch、GitHub Trending、YC 等）
+2. 📝 筛选 5-10 个最值得关注的产品，生成 Markdown 日报
+3. 📸 自动截取产品页面截图
+4. 🚀 推送到 GitHub + 发布到 WordPress + 微信公众号草稿箱
+5. 📱 飞书通知推送结果
+
+### 📂 目录结构
+- [`daily/`](./daily/) — 所有日报 Markdown 文件（`YYYY-MM-DD-ai-daily-digest.md`）
+- [`list.md`](./list.md) — **推荐入口** 📋 日报索引，含每期洞察摘要和跳转链接
 
 ## ✨ 特性
 
@@ -33,17 +38,14 @@
 
 ## 📅 新闻存档
 
-- [2026-04-03 - 热门AI产品周报](./2026-04-03/index.html)
-  - 10款热门产品
-  - AI代理治理、多代理协作、中国厂商加速
+👉 查看 [`list.md`](./list.md) 获取完整日报索引（含洞察摘要）
 
 ## 🛠️ 技术栈
 
 - **生成工具**：OpenClaw Agent (BB01)
 - **模型**：GLM-5 (z.ai)
-- **前端**：纯HTML + CSS（无框架）
-- **托管**：GitHub Pages + Gitea
-- **自动化**：OpenClaw Cron
+- **发布渠道**：GitHub + [WordPress](https://aipmclub.com) + 微信公众号（422labs）
+- **自动化**：OpenClaw Cron + GLM-5
 
 ## 📊 项目结构
 
