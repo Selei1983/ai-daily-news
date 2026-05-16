@@ -49,12 +49,13 @@
 
 ```
 ai-daily-news/
-├── index.html              # 主页索引
+├── list.md                 # 📋 日报索引（推荐入口）
 ├── README.md               # 项目说明
-├── scripts/                # 自动化脚本
-│   └── generate_daily.py   # 每日生成脚本
-└── YYYY-MM-DD/             # 按日期分类
-    └── index.html          # 每日新闻
+├── daily/                  # 所有日报（按日期命名）
+│   ├── 2026-05-16-ai-daily-digest.md
+│   ├── 2026-05-15-ai-daily-digest.md
+│   └── ...
+└── scripts/                # 自动化脚本
 ```
 
 ## 🔧 配置
