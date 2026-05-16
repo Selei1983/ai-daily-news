@@ -3,1031 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily News - 每日AI产品新闻</title>
+    <title>AI 产品日报 · 422实验室</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
 
         :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #ec4899;
-            --accent: #f59e0b;
-            --bg-light: #f8fafc;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --bg: #0a0a0f;
+            --bg-elevated: #12121a;
+            --bg-card: #181825;
+            --bg-card-hover: #1e1e2e;
+            --border: #2a2a3c;
+            --border-light: #1f1f30;
+            --text: #e4e4ef;
+            --text-secondary: #8888a0;
+            --text-muted: #555570;
+            --accent: #8b5cf6;
+            --accent-soft: rgba(139, 92, 246, 0.12);
+            --accent-glow: rgba(139, 92, 246, 0.25);
+            --green: #22c55e;
+            --blue: #3b82f6;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-primary);
+            font-family: 'Noto Sans SC', 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            padding: 0;
+            min-height: 100vh;
         }
 
-        /* 导航栏 */
+        /* ── Nav ── */
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            border-bottom: 1px solid var(--border-light);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .nav-inner {
+            max-width: 860px; margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .nav-brand {
+            display: flex; align-items: center; gap: 0.6rem;
+            text-decoration: none; color: var(--text);
         }
-
-        .logo::before {
-            content: "🤖";
-            font-size: 2rem;
-            -webkit-text-fill-color: initial;
+        .nav-brand .icon {
+            width: 32px; height: 32px; border-radius: 8px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
+        .nav-brand span { font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
+        .nav-brand small { color: var(--text-muted); font-weight: 400; font-size: 0.8rem; margin-left: 0.3rem; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
+            transition: color 0.2s;
         }
+        .nav-links a:hover { color: var(--text); }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero 区域 */
+        /* ── Hero ── */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            max-width: 860px; margin: 0 auto;
+            padding: 3.5rem 2rem 2rem;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
+            font-size: 2rem; font-weight: 800; letter-spacing: -0.03em;
+            margin-bottom: 0.6rem;
+        }
+        .hero h1 .gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #22c55e 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p { color: var(--text-secondary); font-size: 1rem; max-width: 520px; }
+
+        .hero-badges {
+            display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;
+        }
+        .badge {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 0.4rem 0.85rem; border-radius: 100px;
+            font-size: 0.8rem; color: var(--text-secondary);
+        }
+        .badge .dot {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--green);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            position: relative;
-            z-index: 1;
+        /* ── Featured ── */
+        .featured {
+            max-width: 860px; margin: 0 auto; padding: 0 2rem 2rem;
         }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 3rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* 主内容区 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--text-primary);
-        }
-
-        /* 新闻卡片网格 */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .news-card {
+        .featured-card {
             background: var(--bg-card);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem 2.2rem;
+            position: relative; overflow: hidden;
+            text-decoration: none; color: var(--text); display: block;
+            transition: border-color 0.3s, transform 0.2s;
         }
-
-        .news-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
+        .featured-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
         }
-
-        .news-card::before {
+        .featured-card::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+            position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #22c55e);
+        }
+        .featured-label {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            background: var(--accent-soft); color: var(--accent);
+            padding: 0.25rem 0.7rem; border-radius: 6px;
+            font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;
+        }
+        .featured-title {
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+        .featured-insight {
+            color: var(--text-secondary); font-size: 0.92rem;
+            line-height: 1.7; margin-bottom: 1rem;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .featured-meta {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.82rem; color: var(--text-muted);
+        }
+        .featured-meta .date { color: var(--text-secondary); }
+        .read-arrow {
+            color: var(--accent); font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .featured-card:hover .read-arrow { transform: translateX(4px); }
+
+        /* ── Archive List ── */
+        .archive {
+            max-width: 860px; margin: 0 auto; padding: 0 2rem 4rem;
+        }
+        .archive-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.2rem; padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .archive-header h2 {
+            font-size: 1rem; font-weight: 600; color: var(--text-secondary);
+        }
+        .archive-header .count { color: var(--text-muted); font-size: 0.85rem; }
+
+        .list-item {
+            display: flex; align-items: flex-start; gap: 1.2rem;
+            padding: 1.1rem 1.4rem; border-radius: 12px;
+            text-decoration: none; color: var(--text);
+            transition: background 0.2s;
+            border: 1px solid transparent;
+        }
+        .list-item:hover {
+            background: var(--bg-card);
+            border-color: var(--border);
         }
 
-        .card-header {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 2rem 2rem 1.5rem;
+        .list-date {
+            flex-shrink: 0; width: 52px; text-align: center;
+            padding-top: 2px;
         }
+        .list-date .month { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+        .list-date .day { font-size: 1.3rem; font-weight: 700; color: var(--text-secondary); line-height: 1.1; }
 
-        .card-date {
+        .list-content { flex: 1; min-width: 0; }
+        .list-title {
+            font-size: 0.95rem; font-weight: 600; margin-bottom: 0.25rem;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .list-insight {
+            font-size: 0.85rem; color: var(--text-secondary);
+            display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .list-arrow {
+            flex-shrink: 0; color: var(--text-muted);
+            align-self: center; transition: color 0.2s, transform 0.2s;
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.5rem;
+        }
+        .list-item:hover .list-arrow { color: var(--accent); transform: translateX(3px); }
+
+        /* ── Month separator ── */
+        .month-sep {
+            font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            padding: 0.5rem 0 0.5rem 1.4rem;
         }
 
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.3;
-        }
-
-        .card-body {
-            padding: 1.5rem 2rem 2rem;
-        }
-
-        .card-desc {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .card-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: #f1f5f9;
-            color: var(--text-secondary);
-            padding: 0.4rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .tag.hot {
-            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-            color: white;
-        }
-
-        .tag.new {
-            background: linear-gradient(135deg, #4ecdc4 0%, #45b7aa 100%);
-            color: white;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .card-meta {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .read-more {
-            color: var(--primary);
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: gap 0.3s ease;
-        }
-
-        .read-more:hover {
-            gap: 1rem;
-        }
-
-        /* CTA 区域 */
-        .cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 2rem;
-            padding: 4rem;
-            text-align: center;
-            color: white;
-            margin-top: 4rem;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .cta p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            background: white;
-            color: var(--primary);
-            padding: 1rem 3rem;
-            border-radius: 3rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer */
+        /* ── Footer ── */
         footer {
-            background: #1e293b;
-            color: #94a3b8;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-            text-align: center;
+            border-top: 1px solid var(--border-light);
+            max-width: 860px; margin: 0 auto;
+            padding: 2.5rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1rem;
         }
-
-        footer a {
-            color: #e2e8f0;
-            text-decoration: none;
+        .footer-left { color: var(--text-muted); font-size: 0.82rem; }
+        .footer-left a { color: var(--text-secondary); text-decoration: none; }
+        .footer-left a:hover { color: var(--accent); }
+        .footer-right { display: flex; gap: 1.5rem; }
+        .footer-right a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.82rem;
+            transition: color 0.2s;
         }
+        .footer-right a:hover { color: var(--text); }
 
-        footer a:hover {
-            color: var(--primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            list-style: none;
-        }
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 2rem;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.5rem; }
+            .hero { padding: 2.5rem 1.2rem 1.5rem; }
+            .featured, .archive { padding-left: 1.2rem; padding-right: 1.2rem; }
+            .featured-card { padding: 1.5rem; }
+            .list-item { padding: 0.9rem 0.8rem; gap: 0.8rem; }
+            .nav-links { display: none; }
+            footer { padding: 2rem 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">AI Daily News</div>
-            <ul class="nav-links">
-                <li><a href="#latest">最新</a></li>
-                <li><a href="#archive">存档</a></li>
-                <li><a href="https://github.com/Selei1983/ai-daily-news" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero 区域 -->
-    <div class="hero">
-        <h1>🤖 每日AI产品新闻</h1>
-        <p>精选最新、最热门的AI产品资讯，每天更新</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">每日精选产品</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">365</div>
-                <div class="stat-label">持续更新天数</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">25期</div>
-                <div class="stat-label">日报存档</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 主内容 -->
-    <div class="container">
-        <h2 class="section-title" id="latest">📅 最新新闻</h2>
-
-                <div class="news-grid">
-            <a href="./daily/2026-05-16-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月16日 星期六</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-16</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天最值得关注的信号是「本地优先（Local-first）AI」正在从理念走向产品化。Osaurus以5.3K Star和11.4万下载量证明了「推理是你唯一需要的云端能力，其他一切都可以属于你」——
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">本地优先（Local-first）AI</span>
-                            <span class="tag">推理是你唯一需要的云端能力，其他一切都可以属于你</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-15-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月15日 星期五</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-15</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天最值得关注的信号是「AI Agent基础设施正在从软件-only走向软硬结合、从开发工具走向全工作流覆盖」。Clawdmeter以869个Star证明开发者愿意为Claude Code做一个硬件仪
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI Agent基础设施正在从软件-only走向软硬结合、从开发工具走向全工作流覆盖</span>
-                            <span class="tag">AI Agent写HTML</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-14-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月14日 星期四</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-14</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天最强烈的信号是「AI模型极致压缩」正在从实验室走向生产。Needle以637个HN赞证明了：Gemini的Tool Calling能力可以被蒸馏进一个26M参数的「简单注意力网络」——不需要GPU
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI模型极致压缩</span>
-                            <span class="tag">简单注意力网络</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-13-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月13日 星期三</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-13</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天最清晰的信号是「Agent的物理入口」正在被重新定义。CloakBrowser以7.9K Star证明了「给Agent造一个不会被发现身份的浏览器」是刚需——不是在Playwright上加反检测插
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent的物理入口</span>
-                            <span class="tag">给Agent造一个不会被发现身份的浏览器</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-12-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月12日 星期二</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-12</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天最值得关注的信号是「Agent的可观测性与治理层」正在快速产品化。Metorial（YC F25）拿到59个HN赞——它做的是「Vercel for MCP」，为Agent构建统一的身份认证、权限
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent的可观测性与治理层</span>
-                            <span class="tag">Vercel for MCP</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-11-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月11日 星期一</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-11</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的信号指向一个关键词：「Agent的操作基础设施」正在爆发。GitHub Trending上GenericAgent用10.4K Star证明了「自我进化Agent」的可行性——不是预装技能，而是
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent的操作基础设施</span>
-                            <span class="tag">自我进化Agent</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-10-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月10日 星期日</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-10</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天GitHub Trending释放了一个强烈信号：「Agent的专业分工」正在取代「通用Agent」成为新的创业方向。TradingAgents用72K Star证明了多Agent协作做金融交易的
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent的专业分工</span>
-                            <span class="tag">通用Agent</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-09-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月9日 星期六</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-09</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的信号指向三个正在加速的趋势。第一，「Agent Skill生态」正在从社区运动变成大厂战略——AWS Labs发布AI-DLC工作流规则、Google Flutter团队推出官方Agent Sk
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent Skill生态</span>
-                            <span class="tag">制定行为规范</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-08-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月8日 星期五</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-08</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的信号指向一个关键词：「小型化的极致智能」。Zyphra用760M活跃参数的ZAYA1-8B在数学推理上超越GPT-5-High，用的还是AMD芯片——这不仅是「小模型挑战大模型」的又一个案例，更
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">小型化的极致智能</span>
-                            <span class="tag">小模型挑战大模型</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-07-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月7日 星期四</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-07</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的AI创业圈释放了三个强信号：「Agent的上下文基础设施」正式成为一个投资赛道——SageOx拿了1500万美元种子轮做「Agentic Context Infrastructure」，AWS 
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent的上下文基础设施</span>
-                            <span class="tag">Agentic Context Infrastructure</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-05-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月5日 星期二</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-05</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的信号非常明确：「开源替代品」正在全面围攻商业AI产品。ACE-Step UI用MIT协议+本地部署对标Suno的$10-50/月订阅；DeepSeek-TUI把DeepSeek V4的1M上下文
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">开源替代品</span>
-                            <span class="tag">AI金融研究Agent</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-04-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月4日 星期一</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-04</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的AI创业圈传递了两个强信号：「可验证AI」正在成为金融等高监管行业的刚需基础设施，Kepler用确定性执行+LLM推理的分层架构拿下了27个全球市场的金融机构；「AI Agent的基础设施层」正
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">可验证AI</span>
-                            <span class="tag">AI Agent的基础设施层</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-03-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月3日 星期日</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-03</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        本周AI行业释放了一个明确信号：「Agent基础设施层」正在成型。Netomi拿下1.1亿美元融资，背后是Accenture+Adobe的渠道联盟打法——不是卖软件，而是卖「嵌入式的智能体验」。Wri
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Agent基础设施层</span>
-                            <span class="tag">嵌入式的智能体验</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-02-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月2日 星期六</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-02</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        本周AI行业释放了一个强烈信号：Agent赛道正式进入「自治触发」阶段。Writer推出事件驱动型Agent触发器，让AI工作流不再依赖人类发起；Netomi拿下1.1亿美元融资，押注「消灭客服工单」
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">自治触发</span>
-                            <span class="tag">消灭客服工单</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-05-01-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年5月1日 星期五</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-05-01</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        本周 AI 行业的关键信号：企业级 AI 正从「能用」走向「可靠」。 Netomi 拿到 1.1 亿美元融资，核心卖点不是更聪明的聊天机器人，而是能在合规、审计、高并发场景下稳定运行的客服 AI——A
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">能用</span>
-                            <span class="tag">可靠</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-30-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月30日 星期四</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-30</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的AI创业圈有三个信号值得关注：
-
-一是「Coding Agent 基础设施化」加速。 GitHub Trending 被 Agent 相关工具全面占领——从 Matt Pocock 的工程技能框
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">Coding Agent 基础设施化</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-29-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月29日 星期三</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-29</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的信号很明确："AI替代人类调研"不再是概念，而是真金白银的赛道。Electric Twin拿到1000万英镑、Aaru以10亿美元估值完成A轮——合成受众（Synthetic Audiences
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI日报</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-28-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月28日 星期二</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-28</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        本周AI圈发生了三件大事，它们共同指向一个清晰的趋势：AI正在从「单模型调用」走向「多Agent协作生态」。
-
-1. DeepSeek-V4发布，以1/6的价格逼近GPT-5.5和Claude Opu
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">单模型调用</span>
-                            <span class="tag">多Agent协作生态</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-27-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月27日 星期一</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-27</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        AI Coding Agent 基础设施大爆发——从「写代码」到「管理代码宇宙」
-
-今天的信号极其明确：AI 编程领域正在从「帮写代码」的助手时代，迈向「Agent 自主管理整个代码库」的基础设施时代
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">写代码</span>
-                            <span class="tag">管理代码宇宙</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-26-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月26日 星期日</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-26</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        Agent基础设施的「乐高时刻」正在到来。 本周最值得关注的趋势不是某个模型更新，而是整个Agent生态的基础设施层正在快速成型：
-
-1. BAND拿了1700万美元种子轮做「Agent之间的Slac
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">乐高时刻</span>
-                            <span class="tag">Agent之间的Slack</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-24-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月24日 星期五</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-24</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        今天的关键信号：AI基础设施层正在「极简化」。从12MB替代整个AI框架的Axe，到行为缓存中间件Muscle-Mem，再到开源向量图数据库HelixDB——独立开发者和初创公司不再满足于"用大厂的S
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">极简化</span>
-                            
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-23-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月23日 星期四</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-23</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        每日AI产品动态精选
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI日报</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-20-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月20日 星期一</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-20</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        每日AI产品动态精选
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI日报</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-19-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月19日 星期日</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-19</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        每日AI产品动态精选
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI日报</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="./daily/2026-04-18-ai-daily-digest.md" class="news-card">
-                <div class="card-header">
-                    <div class="card-date">2026年4月18日 星期六</div>
-                    <h3 class="card-title">🔬 AI产品日报 - 2026-04-18</h3>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">
-                        每日AI产品动态精选
-                    </p>
-                    <div class="card-tags">
-                        <span class="tag">AI日报</span>
-                    </div>
-                    <div class="card-footer">
-                        <div class="card-meta">
-                            <span>🔬 422实验室</span>
-                        </div>
-                        <div class="read-more">
-                            阅读更多 →
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <!-- CTA -->
-        <div class="cta">
-            <h2>🚀 获取最新AI资讯</h2>
-            <p>每天早上 9:00 自动更新，不错过任何一个AI热点</p>
-            <a href="https://github.com/Selei1983/ai-daily-news" class="cta-button" target="_blank">
-                查看完整项目 →
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <ul class="footer-links">
-            <li><a href="https://github.com/Selei1983/ai-daily-news" target="_blank">GitHub 仓库</a></li>
-            <li><a href="https://git.zjpb.net/jowelin83/ai-daily-news" target="_blank">Gitea 仓库</a></li>
-            <li><a href="#">关于我们</a></li>
+<!-- Nav -->
+<nav>
+    <div class="nav-inner">
+        <a href="./" class="nav-brand">
+            <div class="icon">🔬</div>
+            <span>AI 产品日报<small>by 422</small></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="https://aipmclub.com" target="_blank">WordPress</a></li>
+            <li><a href="https://github.com/Selei1983/ai-daily-news" target="_blank">GitHub</a></li>
         </ul>
-        <p>🤖 由 BB01 (OpenClaw Agent) 自动生成 | 数据来源：Product Hunt, TechCrunch, LabLa, Reuters</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
-            © 2026 AI Daily News. All rights reserved.
-        </p>
-    </footer>
+    </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>每日追踪 <span class="gradient">AI 产品</span>动态</h1>
+    <p>融资情报 · 新产品发布 · 开源项目 · 商业模式，面向创业者和产品经理的每日精选</p>
+    <div class="hero-badges">
+        <div class="badge"><span class="dot"></span>每个工作日 09:00 更新</div>
+        <div class="badge">📋 25 期日报</div>
+        <div class="badge">🔬 422 产品实验室</div>
+    </div>
+</div>
+
+<!-- Featured (latest) -->
+<div class="featured" id="featured-area">
+</div>
+
+<!-- Archive -->
+<div class="archive">
+    <div class="archive-header">
+        <h2>全部日报</h2>
+        <span class="count" id="total-count"></span>
+    </div>
+    <div id="archive-list"></div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-left">
+        🤖 由 BB01 (OpenClaw Agent) 自动生成 · 数据来源：Product Hunt, TechCrunch, GitHub Trending, YC
+    </div>
+    <div class="footer-right">
+        <a href="https://github.com/Selei1983/ai-daily-news" target="_blank">GitHub</a>
+        <a href="https://aipmclub.com" target="_blank">WordPress</a>
+        <a href="https://mp.weixin.qq.com" target="_blank">公众号 422labs</a>
+    </div>
+</footer>
+
+<script>
+const ISSUES = [
+    { date: "2026-05-16", title: "0516日报 | Local-first AI 从理念走向产品化", insight: "今天最值得关注的信号是「本地优先（Local-first）AI」正在从理念走向产品化。Osaurus以5.3K Star证明了「推理是你唯一需要的云端能力」。同时，AI代码生成从文件级走向模块级、从单文件走向全项目协作。", tags: ["Local-first AI", "代码生成"] },
+    { date: "2026-05-15", title: "0515日报 | Agent基础设施软硬结合", insight: "「AI Agent基础设施正在从软件-only走向软硬结合、从开发工具走向全工作流覆盖」。Clawdmeter为Claude Code做了硬件仪表盘，AI Agent写HTML已经能通过Fwds GitHub Bot自动提交PR。", tags: ["Agent基础设施", "软硬结合"] },
+    { date: "2026-05-14", title: "0514日报 | AI模型极致压缩走进生产", insight: "「AI模型极致压缩」正在从实验室走向生产。Needle以637个HN赞证明：Gemini的Tool Calling能力可以被蒸馏进26M参数的网络——不需要GPU就能跑。", tags: ["模型压缩", "蒸馏"] },
+    { date: "2026-05-13", title: "0513日报 | Agent的物理入口被重新定义", insight: "「Agent的物理入口」正在被重新定义。CloakBrowser以7.9K Star证明了给Agent造一个不被发现身份的浏览器是刚需——不是在Playwright上加反检测插件那么简单。", tags: ["Agent浏览器", "反检测"] },
+    { date: "2026-05-12", title: "0512日报 | Agent可观测性与治理层产品化", insight: "「Agent的可观测性与治理层」正在快速产品化。Metorial（YC F25）拿到59个HN赞——做的是「Vercel for MCP」，为Agent构建统一的身份认证、权限管理和可观测性。", tags: ["MCP", "可观测性"] },
+    { date: "2026-05-11", title: "0511日报 | Agent操作基础设施爆发", insight: "「Agent的操作基础设施」正在爆发。GitHub Trending上GenericAgent用10.4K Star证明了「自我进化Agent」的可行性——不是预装技能，而是让Agent自己发现和学习新能力。", tags: ["自我进化Agent", "GitHub Trending"] },
+    { date: "2026-05-10", title: "0510日报 | Agent专业分工取代通用Agent", insight: "「Agent的专业分工」正在取代「通用Agent」成为新的创业方向。TradingAgents用72K Star证明了多Agent协作做金融交易的可行性，OpenAI o3-pro发布让推理成本进一步下降。", tags: ["专业Agent", "多Agent协作"] },
+    { date: "2026-05-09", title: "0509日报 | Agent Skill生态变成大厂战略", insight: "「Agent Skill生态」正在从社区运动变成大厂战略——AWS Labs发布AI-DLC工作流规则、Google Flutter团队推出官方Agent Skill包。Cline以30K Star证明开发者需要的不只是代码补全。", tags: ["Agent Skill", "大厂战略"] },
+    { date: "2026-05-08", title: "0508日报 | 小型化的极致智能", insight: "「小型化的极致智能」。Zyphra用760M活跃参数的ZAYA1-8B在数学推理上超越GPT-5-High，用的还是AMD芯片——这不仅是小模型挑战大模型，更是国产算力替代的里程碑。", tags: ["小模型", "AMD推理"] },
+    { date: "2026-05-07", title: "0507日报 | Agent上下文基础设施成为投资赛道", insight: "「Agent的上下文基础设施」正式成为一个投资赛道——SageOx拿了1500万美元种子轮做「Agentic Context Infrastructure」，AWS LaunchPad选中了做记忆层的Memary。", tags: ["上下文基础设施", "融资"] },
+    { date: "2026-05-05", title: "0505日报 | 开源替代品全面围攻商业AI", insight: "「开源替代品」正在全面围攻商业AI产品。ACE-Step UI用MIT协议+本地部署对标Suno的$10-50/月订阅；DeepSeek-TUI把DeepSeek V4的1M上下文做进了终端。", tags: ["开源替代", "本地部署"] },
+    { date: "2026-05-04", title: "0504日报 | 可验证AI与Agent基础设施层", insight: "「可验证AI」正在成为金融等高监管行业的刚需。Kepler用确定性执行+LLM推理的分层架构拿下了27个全球市场的金融机构。「AI Agent的基础设施层」正在成型。", tags: ["可验证AI", "金融"] },
+    { date: "2026-05-03", title: "0503日报 | Agent基础设施层正在成型", insight: "「Agent基础设施层」正在成型。Netomi拿下1.1亿美元融资，背后是Accenture+Adobe的渠道联盟打法——不是卖软件，而是卖嵌入式的智能体验。", tags: ["Agent基础设施", "1.1亿融资"] },
+    { date: "2026-05-02", title: "0502日报 | Agent赛道进入自治触发阶段", insight: "Agent赛道正式进入「自治触发」阶段。Writer推出事件驱动型Agent触发器，让AI工作流不再依赖人类发起；Netomi拿下1.1亿美元融资押注「消灭客服工单」。", tags: ["自治触发", "事件驱动"] },
+    { date: "2026-05-01", title: "0501日报 | 企业级AI从能用走向可靠", insight: "企业级AI正从「能用」走向「可靠」。Netomi拿到1.1亿美元融资，核心卖点不是更聪明的聊天机器人，而是能在合规、审计、高并发场景下稳定运行的客服AI。", tags: ["企业级AI", "客服AI"] },
+    { date: "2026-04-30", title: "0430日报 | Coding Agent基础设施化加速", insight: "「Coding Agent 基础设施化」加速。GitHub Trending被Agent相关工具全面占领——从工程技能框架到AI代码审核工具，整个开发者工具栈正在被Agent重塑。", tags: ["Coding Agent", "GitHub"] },
+    { date: "2026-04-29", title: "0429日报 | AI替代人类调研成真金白银赛道", insight: "「AI替代人类调研」不再是概念，而是真金白银的赛道。Electric Twin拿到1000万英镑、Aaru以10亿美元估值完成A轮——合成受众（Synthetic Audiences）正在颠覆市场调研。", tags: ["合成受众", "市场调研"] },
+    { date: "2026-04-28", title: "0428日报 | 从单模型调用到多Agent协作生态", insight: "AI正在从「单模型调用」走向「多Agent协作生态」。DeepSeek-V4发布以1/6的价格逼近GPT-5.5，多家公司同时推出Agent编排和协作框架。", tags: ["DeepSeek-V4", "多Agent"] },
+    { date: "2026-04-27", title: "0427日报 | AI Coding Agent基础设施大爆发", insight: "AI编程领域正在从「帮写代码」迈向「Agent自主管理整个代码库」的基础设施时代。从技能框架到代码审核到全项目协作，工具链全面铺开。", tags: ["代码Agent", "基础设施"] },
+    { date: "2026-04-26", title: "0426日报 | Agent基础设施的乐高时刻", insight: "Agent基础设施的「乐高时刻」正在到来。BAND拿了1700万美元种子轮做「Agent之间的Slack」，MCP协议生态快速扩张，多个Agent编排工具同时涌现。", tags: ["Agent乐高", "MCP"] },
+    { date: "2026-04-24", title: "0424日报 | AI基础设施层极简化", insight: "AI基础设施层正在「极简化」。从12MB替代整个AI框架的Axe，到行为缓存中间件Muscle-Mem，独立开发者和初创公司不再满足于大厂的SaaS方案。", tags: ["极简化", "轻量框架"] },
+    { date: "2026-04-23", title: "0423日报", insight: "AI产品动态精选", tags: ["AI日报"] },
+    { date: "2026-04-20", title: "0420日报", insight: "AI产品动态精选", tags: ["AI日报"] },
+    { date: "2026-04-19", title: "0419日报", insight: "AI产品动态精选", tags: ["AI日报"] },
+    { date: "2026-04-18", title: "0418日报", insight: "AI产品动态精选", tags: ["AI日报"] },
+];
+
+function render() {
+    const featured = ISSUES[0];
+    const rest = ISSUES.slice(1);
+    const weekdays = ['日','一','二','三','四','五','六'];
+
+    // Featured
+    const d = new Date(featured.date + 'T00:00:00');
+    const dateStr = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 周${weekdays[d.getDay()]}`;
+    document.getElementById('featured-area').innerHTML = `
+        <a href="./daily/${featured.date}-ai-daily-digest.md" class="featured-card">
+            <div class="featured-label">📰 最新一期</div>
+            <div class="featured-title">${featured.title}</div>
+            <div class="featured-insight">${featured.insight}</div>
+            <div class="featured-meta">
+                <span class="date">${dateStr}</span>
+                <span class="read-arrow">阅读全文 →</span>
+            </div>
+        </a>
+    `;
+
+    // Archive
+    document.getElementById('total-count').textContent = `共 ${ISSUES.length} 期`;
+    let html = '';
+    let lastMonth = '';
+    for (const item of rest) {
+        const im = new Date(item.date + 'T00:00:00');
+        const monthKey = `${im.getFullYear()}-${String(im.getMonth()+1).padStart(2,'0')}`;
+        const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+        if (monthKey !== lastMonth) {
+            html += `<div class="month-sep">${im.getFullYear()} ${monthNames[im.getMonth()]}</div>`;
+            lastMonth = monthKey;
+        }
+        html += `
+            <a href="./daily/${item.date}-ai-daily-digest.md" class="list-item">
+                <div class="list-date">
+                    <div class="month">${String(im.getMonth()+1).padStart(2,'0')}月</div>
+                    <div class="day">${im.getDate()}</div>
+                </div>
+                <div class="list-content">
+                    <div class="list-title">${item.title}</div>
+                    <div class="list-insight">${item.insight}</div>
+                </div>
+                <div class="list-arrow">→</div>
+            </a>
+        `;
+    }
+    document.getElementById('archive-list').innerHTML = html;
+}
+
+render();
+</script>
 </body>
 </html>
