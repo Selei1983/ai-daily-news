@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-05-21 | AI Agent正在从软件界面渗透进每一个已存在的工作流。Viktor把AI Coworker嵌入Slack，10周$15M ARR；Unframe 12个月$100M合同额；Ocean用Agent对抗AI钓鱼攻击… | [📖 查看](./daily/2026-05-21-ai-daily-digest.md) |
 | 2026-05-17 | 「AI自我进化」从概念变成了资本追逐的具体赛道。Recursive $650M出隐身做自我改进AI，Adaption $50M做模型自动训练，GenericAgent 11.3K Star展示自进化Agent… | [📖 查看](./daily/2026-05-17-ai-daily-digest.md) |
 | 2026-05-16 | 今天最值得关注的信号是「本地优先（Local-first）AI」正在从理念走向产品化。Osaurus以5.3K Star… | [📖 查看](./daily/2026-05-16-ai-daily-digest.md) |
 | 2026-05-15 | 今天最值得关注的信号是「AI Agent基础设施正在从软件-only走向软硬结合、从开发工具走向全工作流覆盖」。Claw… | [📖 查看](./daily/2026-05-15-ai-daily-digest.md) |
