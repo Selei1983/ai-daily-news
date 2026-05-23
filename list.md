@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-05-23 | AI从软件层走向物理层。Hark $700M做AI+硬件消费产品，Fractile $220M做推理专用芯片，Catena Labs $30M做AI原生银行，自变量机器人近20亿B轮四家大厂全押… | [📖 查看](./daily/2026-05-23-ai-daily-digest.md) |
 | 2026-05-21 | AI Agent正在从软件界面渗透进每一个已存在的工作流。Viktor把AI Coworker嵌入Slack，10周$15M ARR；Unframe 12个月$100M合同额；Ocean用Agent对抗AI钓鱼攻击… | [📖 查看](./daily/2026-05-21-ai-daily-digest.md) |
 | 2026-05-17 | 「AI自我进化」从概念变成了资本追逐的具体赛道。Recursive $650M出隐身做自我改进AI，Adaption $50M做模型自动训练，GenericAgent 11.3K Star展示自进化Agent… | [📖 查看](./daily/2026-05-17-ai-daily-digest.md) |
 | 2026-05-16 | 今天最值得关注的信号是「本地优先（Local-first）AI」正在从理念走向产品化。Osaurus以5.3K Star… | [📖 查看](./daily/2026-05-16-ai-daily-digest.md) |
