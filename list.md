@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-05-30 | 今天最值得创业者注意的信号，不是又有哪个模型更强，而是 AI 的「落地效率层」正在快速成形。XCENA、Tensormesh 在压推理成本，Sesame、Atheni、Integuru 在压采用与接入成本 | [📖 查看](./daily/2026-05-30-ai-daily-digest.md) |
 | 2026-05-27 | AI产业的「模型路由层」正在成为新基础设施。OpenRouter $1.13亿一年估值翻倍至$13亿，Dust $4000万做「多人AI」零流失率，Ocean $2800万用AI对抗AI钓鱼攻击，华为具脑磐石走类脑路线 | [📖 查看](./daily/2026-05-27-ai-daily-digest.md) |
 | 2026-05-23 | AI从软件层走向物理层。Hark $700M做AI+硬件消费产品，Fractile $220M做推理专用芯片，Catena Labs $30M做AI原生银行，自变量机器人近20亿B轮四家大厂全押… | [📖 查看](./daily/2026-05-23-ai-daily-digest.md) |
 | 2026-05-21 | AI Agent正在从软件界面渗透进每一个已存在的工作流。Viktor把AI Coworker嵌入Slack，10周$15M ARR；Unframe 12个月$100M合同额；Ocean用Agent对抗AI钓鱼攻击… | [📖 查看](./daily/2026-05-21-ai-daily-digest.md) |
