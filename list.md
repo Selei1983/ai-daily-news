@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-06-03 | AI Agent编排工具正从黑客脚本变成正式产品，推理芯片多元化催生新一代neocloud。Superset/Runtime/Minicor三 | [📖 查看](./daily/2026-06-03-ai-daily-digest.md) |
 | 2026-06-01 | 今天最值得创业者注意的，不是又有哪个底层模型刷新榜单，而是 YC 最新一批 AI 创业公司，正在把注意力从“更强模型”集体转向“更短落地链路”。Sitefire、Canary、VOYGR、Terminal Use、Vela 几乎都在猛攻真实工作流最贵的一步 | [📖 查看](./daily/2026-06-01-ai-daily-digest.md) |
 | 2026-05-31 | 今天最值得创业者注意的，不是又多了一个更强模型，而是 Physical AI 与端侧 AI 正在一起进入“可商业化阶段”。Airis Labs、Human Archive、EngineAI 在补齐具身智能的数据与交付层 | [📖 查看](./daily/2026-05-31-ai-daily-digest.md) |
 | 2026-05-30 | 今天最值得创业者注意的信号，不是又有哪个模型更强，而是 AI 的「落地效率层」正在快速成形。XCENA、Tensormesh 在压推理成本，Sesame、Atheni、Integuru 在压采用与接入成本 | [📖 查看](./daily/2026-05-30-ai-daily-digest.md) |
