@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-06-28 | 垂直AI产品密集爆发：HaloBraid $7M种子轮用机器人编发（千年手艺首次自动化），Fika Jobs $4M让AI Agent执行视频面试，Sakana Fugu趁Anthropic出口禁令推前沿模型，Cognee 24K star做Agent记忆层，OpenSpec 57K star管理AI编码需求，AI Berkshire用Claude Code跑真实投资组合两年+146%收益 | [📖 查看](./daily/2026-06-28-ai-daily-digest.md) |
 | 2026-06-27 | AI基建赛道百亿融资爆发：Patronus AI $50M B轮做Agent压力测试（收入15倍增长），General Intuition $3.2亿用游戏数据训练通用Agent，Unconventional AI新架构芯片降功耗1000倍，Netris $15M做AI云网络自动化 | [📖 查看](./daily/2026-06-27-ai-daily-digest.md) |
 | 2026-06-25 | Agent基础设施层全面成熟：Vercel发布Eve框架标准化Agent开发，shadcn推出agentcn做Agent UI组件，Mindstone Rebel自动路由最优模型，Lelu开源Agent授权引擎，AEO（AI推荐优化）成为新品类 | [📖 查看](./daily/2026-06-25-ai-daily-digest.md) |
 | 2026-06-15 | 今天最值得创业者注意的，不是又多了一个更聪明的聊天助手，而是AI正在从「软件里回答问题」走向「在物理世界和高监管行业中直接执行」：有人用AI-native机器人接管工业操作，有人用物理AI模拟电网，有人让AI操作员直接进入金融合规系统干活，还有人给AI银行牌照、建零幻觉研究环境。 | [📖 查看](./daily/2026-06-15-ai-daily-digest.md) |
