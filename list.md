@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-07-05 | 石油美元入局AI基建：Together AI $8亿C轮沙特阿美领投$83亿估值，Venice AI $65M A轮隐私独角兽已盈利$70M ARR，Neo $30M创始人自掏腰包做AI原生企业工作平台，Banger Mail让AI Agent用PR模式协作邮件，Mcpsnoop/ctx/Token Diet三款开源工具定义Agent管理新品类 | [📖 查看](./daily/2026-07-05-ai-daily-digest.md) |
 | 2026-07-01 | AI推理芯片与编码Agent吸金：Etched $5B估值$1B订单（Karpathy/Hinton/Fei-Fei Li全入场），EquiLibre $5亿估值用RL跑量化交易（DeepMind扑克AI团队），Chamath 8090 Labs $135M做企业编码Agent，Arena 8个月$100M ARR，Acti把Agent塞进手机键盘 | [📖 查看](./daily/2026-07-01-ai-daily-digest.md) |
 | 2026-06-28 | 垂直AI产品密集爆发：HaloBraid $7M种子轮用机器人编发（千年手艺首次自动化），Fika Jobs $4M让AI Agent执行视频面试，Sakana Fugu趁Anthropic出口禁令推前沿模型，Cognee 24K star做Agent记忆层，OpenSpec 57K star管理AI编码需求，AI Berkshire用Claude Code跑真实投资组合两年+146%收益 | [📖 查看](./daily/2026-06-28-ai-daily-digest.md) |
 | 2026-06-27 | AI基建赛道百亿融资爆发：Patronus AI $50M B轮做Agent压力测试（收入15倍增长），General Intuition $3.2亿用游戏数据训练通用Agent，Unconventional AI新架构芯片降功耗1000倍，Netris $15M做AI云网络自动化 | [📖 查看](./daily/2026-06-27-ai-daily-digest.md) |
