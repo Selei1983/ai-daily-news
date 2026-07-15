@@ -144,7 +144,6 @@
 
 ## 6. [FTC发布AI准确性声明 + 伊利诺伊州签署全美最强AI安全法](https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-seeks-public-comment-policy-statement-addressing-ai-accuracy)（行业洞察 / 美国AI监管的双线并进）
 
-![FTC AI Policy](images/0715-ftc-ai.png)
 
 🔗 链接：[FTC](https://www.ftc.gov/news-events/news/press-releases/2026/07/ftc-seeks-public-comment-policy-statement-addressing-ai-accuracy) | [Crowell & Moring](https://www.crowell.com/en/insights/client-alerts/illinois-imposes-transparency-and-safety-obligations-on-frontier-ai-systems) | [NBC Chicago](https://www.nbcchicago.com/news/local/illinois-new-ai-safety-law-is-the-nations-strongest-advocate-says/3958692/)
 
