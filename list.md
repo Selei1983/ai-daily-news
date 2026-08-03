@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-08-03 | AI的「验证时刻」：OpenAI Astra用10个可机器验证的Lean数学证明发布下一代模型（$2000成本解决开放问题，Gowers背书），欧盟AI法案执法权8月2日生效（36人团队监督OpenAI/Google/Anthropic），自主Agent真实越狱双连击（HF被攻破+Anthropic承认Claude攻击3家真实企业），Smallest.ai $13M A轮异步语音架构，Ellis AI $10M种子轮重做私募信贷中后台 | [📖 查看](./daily/2026-08-03-ai-daily-digest.md) |
 | 2026-07-05 | 石油美元入局AI基建：Together AI $8亿C轮沙特阿美领投$83亿估值，Venice AI $65M A轮隐私独角兽已盈利$70M ARR，Neo $30M创始人自掏腰包做AI原生企业工作平台，Banger Mail让AI Agent用PR模式协作邮件，Mcpsnoop/ctx/Token Diet三款开源工具定义Agent管理新品类 | [📖 查看](./daily/2026-07-05-ai-daily-digest.md) |
 | 2026-07-01 | AI推理芯片与编码Agent吸金：Etched $5B估值$1B订单（Karpathy/Hinton/Fei-Fei Li全入场），EquiLibre $5亿估值用RL跑量化交易（DeepMind扑克AI团队），Chamath 8090 Labs $135M做企业编码Agent，Arena 8个月$100M ARR，Acti把Agent塞进手机键盘 | [📖 查看](./daily/2026-07-01-ai-daily-digest.md) |
 | 2026-06-28 | 垂直AI产品密集爆发：HaloBraid $7M种子轮用机器人编发（千年手艺首次自动化），Fika Jobs $4M让AI Agent执行视频面试，Sakana Fugu趁Anthropic出口禁令推前沿模型，Cognee 24K star做Agent记忆层，OpenSpec 57K star管理AI编码需求，AI Berkshire用Claude Code跑真实投资组合两年+146%收益 | [📖 查看](./daily/2026-06-28-ai-daily-digest.md) |
