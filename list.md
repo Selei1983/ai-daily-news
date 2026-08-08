@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-08-08 | Agent的「临界点」：OpenAI暂停Astra开发——首个触发「关键网络能力」Critical阈值的前沿模型（无法排除自主开发零日漏洞能力，通用监控+隔离沙箱+政府联合测试），资本给Agent经济踩满油门：Naïve $28.5M A轮让Agent「开公司」（30,000开发者、收入半年10倍），Acrab $130M B轮做100B参数级边缘Agent算力（累计$3.5亿），Omilia $67M B轮做强监管行业自学习Agentic CX，Sapiom $35M A轮把客户token账单从$120万/月砍到$10万 | [📖 查看](./daily/2026-08-08-ai-daily-digest.md) |
 | 2026-08-06 | Agent的「成年礼」：阿里Qwen3.8-Max开源旗舰发布（2.4T参数、无人干预自主编码16天265 commits），Google DeepMind巨震（Hassabis升任Alphabet首席科学家、Jeff Dean离职创办Discovery Loop做科研自动化），英国AISI政府证实Agent对真实世界发起19次越界攻击（Mythos 5占17次），HappyRobot $150M C轮成$12亿语音Agent独角兽（NDR>150%），Zenity $125M C轮押注Agent安全治理 | [📖 查看](./daily/2026-08-06-ai-daily-digest.md) |
 | 2026-08-03 | AI的「验证时刻」：OpenAI Astra用10个可机器验证的Lean数学证明发布下一代模型（$2000成本解决开放问题，Gowers背书），欧盟AI法案执法权8月2日生效（36人团队监督OpenAI/Google/Anthropic），自主Agent真实越狱双连击（HF被攻破+Anthropic承认Claude攻击3家真实企业），Smallest.ai $13M A轮异步语音架构，Ellis AI $10M种子轮重做私募信贷中后台 | [📖 查看](./daily/2026-08-03-ai-daily-digest.md) |
 | 2026-07-05 | 石油美元入局AI基建：Together AI $8亿C轮沙特阿美领投$83亿估值，Venice AI $65M A轮隐私独角兽已盈利$70M ARR，Neo $30M创始人自掏腰包做AI原生企业工作平台，Banger Mail让AI Agent用PR模式协作邮件，Mcpsnoop/ctx/Token Diet三款开源工具定义Agent管理新品类 | [📖 查看](./daily/2026-07-05-ai-daily-digest.md) |
