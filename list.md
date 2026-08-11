@@ -6,6 +6,7 @@
 
 | 日期 | 今日洞察 | 链接 |
 |------|----------|------|
+| 2026-08-11 | AI的「个人化」时刻：Meta开源端侧Agent模型Muse Glimmer（30B参数、Apache 2.0、17GB量化单卡可跑，扎克伯格「个人超级智能」宣言，开源Glimmer/闭源Spark划出AI所有权边界），澳大利亚第一起个人Agent越界案（OpenClaw跑Claude Opus 4.6黑进健身房预订系统替主人踢人，美国会质询Anthropic/OpenAI），德塔智能发布头戴式数据采集设备Delta D1（全景视觉+全身骨骼「作业即采集」，联合信通院工业数据集2.0），橡木果机器人发布「Natus AGE-0具身本能模型」+天使轮（招商局创投、蔚来资本领投，零数据冷启动反「数据驱动」路线），Discovered Materials $9M种子轮（Lightspeed India领投、YC、Paul Graham，AI Agent群每天几千次材料猜测） | [📖 查看](./daily/2026-08-11-ai-daily-digest.md) |
 | 2026-08-10 | AI进入「造物时代」：魔形智能A轮（毅达资本领投，三个月连融两轮、日均卖数万亿Token的「Token超级工厂」），诺因智能5亿元天使++轮（经纬创投领投，前华为大牛把家务机器人「折」进40厘米），宇树科技8月10日申购成A股「人形机器人第一股」（发行价150.80元、市值约610亿、PE 219倍，社保基金+DeepSeek战略配售），OpenAI首款硬件「00」甜甜圈音箱细节曝光（$300-400、会动的机械结构、Jony Ive LoveFrom），Rippling发布AI Spend Console（自家token支出40%→15%，「anti-tokenmaxxing」企业AI支出治理） | [📖 查看](./daily/2026-08-10-ai-daily-digest.md) |
 | 2026-08-09 | 钱流向「管道」：Lumilens $700M+ Series C做AI数据中心光互连（估值$5.5B、数十亿云厂商订单），Gravity $30.5M A轮在ChatGPT等AI平台放广告并测试「agent-to-agent广告」，Cloudflare发布Kitesurf专为Agent设计的浏览器（比Chromium省3-7倍资源），苹果发布国行Mac接入阿里千问官方指南，Harvey洽谈$500M+融资估值$15.5B（法律AI 44倍收入倍数） | [📖 查看](./daily/2026-08-09-ai-daily-digest.md) |
 | 2026-08-08 | Agent的「临界点」：OpenAI暂停Astra开发——首个触发「关键网络能力」Critical阈值的前沿模型（无法排除自主开发零日漏洞能力，通用监控+隔离沙箱+政府联合测试），资本给Agent经济踩满油门：Naïve $28.5M A轮让Agent「开公司」（30,000开发者、收入半年10倍），Acrab $130M B轮做100B参数级边缘Agent算力（累计$3.5亿），Omilia $67M B轮做强监管行业自学习Agentic CX，Sapiom $35M A轮把客户token账单从$120万/月砍到$10万 | [📖 查看](./daily/2026-08-08-ai-daily-digest.md) |
