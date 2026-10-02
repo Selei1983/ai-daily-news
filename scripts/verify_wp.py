@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Verify WordPress post 3006 content."""
+import os
 import base64, requests
 
 USER = "jowelin"
-APP_PASSWORD = "yRR6 WTG6 XWUU kvn3 QTg7 bWpX".replace(" ", "")
+APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "").replace(" ", "")
+if not APP_PASSWORD:
+    raise SystemExit("WP_APP_PASSWORD must be set by the publishing environment")
 auth = base64.b64encode(f"{USER}:{APP_PASSWORD}".encode()).decode()
 headers = {"Authorization": f"Basic {auth}"}
 
