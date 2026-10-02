@@ -1,2 +1,10 @@
 ai-daily-news/
 __pycache__/
+
+# Local publishing credentials and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+wewrite/config.yaml

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Publish today's digest to WordPress (aipmclub.com) via REST API."""
+import os
 import base64
 import sys
 import requests
@@ -13,7 +14,9 @@ except ImportError:
 MD_PATH = "/Users/jowe_macmini/.hermes/workspace/ai-daily-news/daily/2026-08-23-ai-daily-digest.md"
 WP_URL = "https://aipmclub.com/wp-json/wp/v2/posts"
 USER = "jowelin"
-APP_PASSWORD = "yRR6 WTG6 XWUU kvn3 QTg7 bWpX".replace(" ", "")
+APP_PASSWORD = os.environ.get("WP_APP_PASSWORD", "").replace(" ", "")
+if not APP_PASSWORD:
+    raise SystemExit("WP_APP_PASSWORD must be set by the publishing environment")
 CATEGORY_ID = 136  # ai-daily
 
 with open(MD_PATH, encoding="utf-8") as f:
